@@ -65,8 +65,9 @@ function clearAlarm() {
 }
 
 function snooze() {
-    if (snoozeCount == 2){
+    if (snoozeCount == 3){
         alert("You have already Snoozed 3 times");
+        return ;
     }
     snoozeCount += 1;
     audio.pause();

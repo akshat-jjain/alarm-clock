@@ -9,6 +9,7 @@ audio.loop = true;
 let alarmTime = null;
 let alarmTimeout = null;
 let currentTime = null;
+let snoozeCount = 0;
 
 const myList = document.querySelector('#myList');
 const addAlarm = document.querySelector('.setAlarm')
@@ -64,6 +65,10 @@ function clearAlarm() {
 }
 
 function snooze() {
+    if (snoozeCount == 2){
+        alert("You have already Snoozed 3 times");
+    }
+    snoozeCount += 1;
     audio.pause();
     alert('Alarm Snoozed');
     let newList = alarmList.filter((time) => time != currentTime);
